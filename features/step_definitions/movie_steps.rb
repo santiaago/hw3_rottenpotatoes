@@ -1,9 +1,14 @@
 # Add a declarative step here for populating the DB with movies.
 
 Given /the following movies exist/ do |movies_table|
-  movies_table.hashes.each do |movie|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
+    movie.create({:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'});
+    movie.create({:title => 'The Terminator', :rating => 'R', :release_date => '26-Oct-1984'});
+    movie.create({:title => 'When Harry Met Sally', :rating => 'R', :release_date => '21-Jul-1989'});
+    movie.create({:title => 'The Help', :rating => 'PG-13', :release_date => '10-Aug-2011'});
+    movie.create({:title => 'Chocolat', :rating => 'PG-13', :release_date => '5-Jan-2001'});
+    movie.create({:title => 'Amelie', :rating => 'R', :release_date => '25-Apr-2001'});
   end
   assert false, "Unimplmemented"
 end
